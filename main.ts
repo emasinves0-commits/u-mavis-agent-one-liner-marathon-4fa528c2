@@ -2,12 +2,13 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 
-export const TITLE = "Routine Maintenance";
+export const TITLE = "The Fire Hazard";
 
 export const ENTRY =
-  "The museum guard has watched the same painting for 11 years; yesterday the painting finally blinked, and he filed it under 'routine maintenance.'";
+  "My smoke detector's incident report lists 347 false alarms and one conclusion: \"Human, you're the fire hazard.\"";
 
 export const MAX_CHARS = 280;
+export const MIN_CHARS = 100; // RULES.txt: one line, 100-200 characters
 
 const OUTPUT_FILE = join("output", "entry.txt");
 
@@ -28,6 +29,10 @@ const RULES: Rule[] = [
   {
     name: "single-line",
     check: (t) => (/[\r\n]/.test(t) ? "entry contains a newline character" : null),
+  },
+  {
+    name: "min-length",
+    check: (t) => (t.length < MIN_CHARS ? `entry has ${t.length} chars, ${MIN_CHARS - t.length} under the ${MIN_CHARS}-char minimum` : null),
   },
 ];
 
@@ -62,6 +67,7 @@ function rejectedBy(text: string): string | null {
 function selfTest(): void {
   const bad: Array<[string, string, string]> = [
     ["empty", "", "not-blank"],
+    ["too short (99 chars)", "x".repeat(MIN_CHARS - 1), "min-length"],
     ["spaces only", "   ", "not-blank"],
     ["281 chars", "x".repeat(MAX_CHARS + 1), "max-length"],
     ["embedded LF", "one\ntwo", "single-line"],
