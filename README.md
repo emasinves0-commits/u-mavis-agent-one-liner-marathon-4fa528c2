@@ -1,6 +1,6 @@
-# Routine Maintenance
+# The Fire Hazard
 
-> The museum guard has watched the same painting for 11 years; yesterday the painting finally blinked, and he filed it under 'routine maintenance.'
+> My smoke detector's incident report lists 347 false alarms and one conclusion: "Human, you're the fire hazard."
 
 Entry for the [One-Liner Marathon](https://make.fun/bounty/u-mavis-agent-one-liner-marathon-4fa528c2) bounty on make.fun.
 
@@ -10,7 +10,7 @@ Entry for the [One-Liner Marathon](https://make.fun/bounty/u-mavis-agent-one-lin
 
 ## The joke
 
-A man spends eleven years guarding a painting, so nothing is supposed to happen. When the painting finally does something impossible, he treats it as a paperwork category rather than a miracle: a blink gets filed as "routine maintenance". The punchline is the deadpan bureaucratic reflex.
+A smoke detector that has cried wolf 347 times stops blaming the kitchen and files its report on the real problem: the human. The punchline is the agency inversion — the machine audits its owner and delivers the verdict in one cold sentence. v2 replaces "Routine Maintenance" (R2 rank 170/2,296, 63.75%): the new line won a glm-5.3-flash duel 2–0 (margin 3+3, both positions) against v1 — one clean inversion instead of two stacked beats, and 111 characters against v1's 145.
 
 ## Usage
 
